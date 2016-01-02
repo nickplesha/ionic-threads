@@ -1,0 +1,63 @@
+/***************************************/
+/*Custom colors                        */
+/***************************************/
+
+$ionThreadBackground: #f8f8f8 !default;
+$ionThreadText: #3f3f3f !default;
+$ionThreadAuthor: #9494ff !default;
+$ionThreadOther: #8899a6 !default;
+$ionThreadChildOffset: 10px;
+$ionThreadFontSize: 13px;
+
+/***************************************/
+/*Comments                             */
+/***************************************/
+
+.ion-comment {
+  font-size: 12px;
+  padding: 6px 15px;
+  overflow: visible;
+  white-space: normal;
+  border: none;
+}
+.ion-comment .item-options .button {
+  background-color: $ionThreadBackground;
+}
+.ion-comment--text p {
+  overflow: visible;
+  white-space: normal;
+}
+.ion-comment .item-content,
+.ion-comment .item-content p {
+  padding: 0;
+  overflow: visible;
+  white-space: normal;
+  font-size: $ionThreadFontSize;
+  color: $ionThreadText
+}
+.ion-comment--author {
+  color: $ionThreadAuthor;
+  margin-bottom: 6px;
+}
+.ion-comment--op {
+  color: $ionThreadOther;
+}
+.ion-comment--replies {
+  color: $ionThreadOther;
+  text-align: right;
+}
+.ion-comment--score {
+  text-align: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $ionThreadOther;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+.ion-comment--container {
+  background-color: $ionThreadBackground;
+}
+.ion-comment--children {
+  margin-left: $ionThreadChildOffset;
+}

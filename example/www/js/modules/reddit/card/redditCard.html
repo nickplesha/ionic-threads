@@ -1,0 +1,15 @@
+<div class="reddit-card" ui-sref="tab.post({ subreddit: post.data.subreddit, id: post.data.id, url: post.data.url, thumbnail: post.data.thumbnail, selftext: post.data.selftext, author: post.data.author, title: post.data.title, num_comments: post.data.num_comments, score: post.data.score, name: post.data.name})">
+	<div class="reddit-card--header" ng-class="{ 'large-title': !post.data.thumbnail && !image }">
+		<h3 class="reddit-card--header--title">{{post.data.title | limitTo: titleLimit}}<span ng-if="post.data.title.length > titleLimit">...</span></h3>		
+	</div>
+	
+	<div ng-if="post.data.thumbnail && !post.data.image" class="reddit-card--image" style="background-image: url('{{post.data.thumbnail}}');background-size:cover;background-position:center;"></div>
+	<div ng-if="post.data.image" class="reddit-card--image" style="background-image: url('{{post.data.image}}');background-size:cover;background-position:center;"></div>
+	<div class="reddit-card--stats">
+		<div class="reddit-card--stats--sub">r/{{post.data.subreddit | limitTo: subredditLimit}}<span ng-if="post.data.subreddit.length > subredditLimit">...</span></div>
+		<div class="reddit-card--stats--numbers">
+			<span><span class="ion-arrow-up-a"></span>{{post.data.score}}</span>
+			<span><span class="ion-chatbox"></span>{{post.data.num_comments}}</span>
+		</div>
+	</div>
+</div>

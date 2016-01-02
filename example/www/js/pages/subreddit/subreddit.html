@@ -1,0 +1,10 @@
+<ion-view view-title="{{title}}">
+  <ion-content>
+    <div ng-repeat="card in posts" on-destroy="cardDestroyed($index)" class="animate-if">
+      <div>
+        <reddit-card post="card" >
+        </reddit-card>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

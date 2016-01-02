@@ -1,0 +1,16 @@
+// Custom colors
+$blue: #9494ff !default;
+$gray: #f8f8f8 !default;
+$subtle: #8899a6 !default;
+$white: #fff !default;
+$black: #3f3f3f !default;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+//Include our components
+@import "components/example.scss";
+@import "www/lib/ionic-threads/ionic.threads.scss";

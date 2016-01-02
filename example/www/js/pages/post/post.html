@@ -1,0 +1,40 @@
+<ion-view view-title="">
+  <ion-nav-buttons side="secondary">
+    <a class="button button-icon icon ion-ios-upload-outline" ng-click="share()"></a>
+        <new-comment post="post"></new-comment>
+  </ion-nav-buttons>
+
+  <ion-content class="reddit-post">
+    <div class="reddit-post--title">{{post.data.title}}</div>
+    <a class="reddit-post--url" target="_blank" href="{{post.data.url}}">
+      <span class="icon ion-share"></span>
+      {{post.data.url | limitTo: 40}}<span ng-show="post.data.url.length > 40">...</span>
+    </a>
+    <div>
+      <!-- Selftext -->
+      <div class="reddit-post--selftext" ng-if="post.data.selftext">
+        <div class="reddit-post--selftext--author">{{post.data.author}}:</div>
+        <div ng-bind-html="post.data.selftext" class="comment-text"></div>
+      </div>
+      <!-- Image -->
+      <div class="reddit-post--image-container" ng-if="post.data.image">
+        <img class ng-show="post.data.image" ng-src="{{post.data.image}}" >
+      </div>
+    </div>
+
+    <div class="reddit-post--stats">
+      <a class="reddit-post--sub" href="#/tab/subreddits/{{post.data.subreddit}}">r/{{post.data.subreddit}}</a>
+      <div class="reddit-post--numbers">
+        <span><span class="ion-arrow-up-a"></span>{{post.data.score}}</span>
+        <span><span class="ion-chatbox"></span>{{post.data.num_comments}}</span>
+      </div>
+    </div>
+
+    <div ng-if="!comments" class="reddit-post--loading">
+      <span>
+        Loading comments...
+      </span>
+    </div>
+    <ion-thread comments="comments" post="post"></ion-thread>
+  </ion-content>
+</ion-view>

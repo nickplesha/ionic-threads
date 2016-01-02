@@ -1,0 +1,31 @@
+{
+"name": "ionic-threads",
+"version": "1.0.0",
+"authors": [
+"Nikola Plesa <nickplesha@gmail.com>"
+],
+"description": "A collapsible comment thread component for ionic framework",
+"main": [
+"ionic.threads.js"
+],
+"keywords": [
+"ionic-threads",
+"ionic",
+"comments",
+"comments for ionic",
+"comments for ionic framework"
+],
+"license": "MIT",
+"homepage": "https://github.com/nickplesha",
+"private": false,
+"ignore": [
+"**/.*",
+"node_modules",
+"bower_components",
+"test",
+"tests"
+],
+"dependencies": {
+"ionic": ">=0.9.27"
+}
+}
