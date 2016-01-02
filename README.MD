@@ -1,4 +1,4 @@
-Ionic Contrib: Comment Threads
+Ionic Collapsible Comment Threads
 ===================
 
 Threaded comments for Ionic and Angular. Used for collapsible nested comment threads with multiple levels of indendation for Wordpress, Reddit or various other social networks. Can also be used to display any other list of comments.

@@ -24,8 +24,5 @@
 "bower_components",
 "test",
 "tests"
-],
-"dependencies": {
-"ionic": ">=0.9.27"
-}
+]
 }
