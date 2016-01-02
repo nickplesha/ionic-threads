@@ -5,7 +5,7 @@ Threaded comments for Ionic and Angular. Used for collapsible nested comment thr
 
 ## Install
 
-`bower install ionic-contrib-threads`
+`bower install ionic-threads`
 
 ## Usage
 
