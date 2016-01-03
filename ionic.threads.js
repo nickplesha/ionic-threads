@@ -44,9 +44,11 @@ angular.module('ionic.contrib.ui.ionThread', [])
 			template: '<script type="text/ng-template" id="node.html">\
 							<ion-comment ng-click="toggleComment(comment)" comment="comment" op="post.data.author">\
 							</ion-comment>\
-							<div class="reddit-post--comment--container">\
-								<ul ng-if="comment.showChildren" class="animate-if ion-comment--children">\
-								    <li ng-repeat="comment in comment.data.replies.data.children">\
+							<div class="reddit-post--comment--container">' +
+							//Replace with ng-if="comment.showChildren" to hide all child comments by default
+								 '<ul ng-if="!comment.showChildren" class="animate-if ion-comment--children">'+
+								 //Replace comment.data.replies.data.children according to the API you are using, this is the comment data structure used by the Reddit API
+								    '<li ng-repeat="comment in comment.data.replies.data.children">\
 								        <ng-include src="\'node.html\'"/>\
 								    </li>\
 								</ul>\
