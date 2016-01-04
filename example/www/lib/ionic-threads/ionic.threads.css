@@ -9,9 +9,6 @@
   white-space: normal;
   border: none;
 }
-.ion-comment .item-options .button {
-  background-color: #f8f8f8;
-}
 .ion-comment--text p {
   overflow: visible;
   white-space: normal;
