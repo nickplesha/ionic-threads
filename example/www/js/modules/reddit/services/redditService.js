@@ -1,25 +1,32 @@
-angular.module('reddit')
+(function() {
+    'use strict';
 
-	.factory('PostService', ['$http', 'RedditResource', 'RedditConfig',
-	 function($http ,RedditResource, RedditConfig) {
+    angular.module('reddit')
+		.factory('PostService', PostService)
+		.factory('CommentService',CommentService)
+		.factory('URLService', URLService);
+
+    function PostService($http ,RedditResource, RedditConfig) {
 	    return {
-	      get: function (subreddit, filter, limit, after) {
-	      	if (subreddit) {
-	      		return RedditResource.get({ 
-	          	subreddit: subreddit,
-				filter: filter,
-				limit: limit || RedditConfig.defaultPageSize,
-				after: after
-			  }).$promise;
-	      	} else {
-	      		return $http({method:'GET', url: RedditConfig.apiEndpoint + '/'+filter+'.json?limit=' + limit + '&after=' + after });
-	      	}
-	          
-	      }
+			get: function (subreddit, filter, limit, after) {
+				if (subreddit) {
+					return RedditResource.get({ 
+					  	subreddit: subreddit,
+						filter: filter,
+						limit: limit || RedditConfig.defaultPageSize,
+						after: after
+					}).$promise;
+						} else {
+							return $http({method:'GET', url: RedditConfig.apiEndpoint + '/'+filter+'.json?limit=' + limit + '&after=' + after });
+						}
+			  
+			}
 	    }
-	}])
+	}
 
-	.factory('CommentService', ['RedditCommentResource', 'RedditConfig', function(RedditCommentResource, RedditConfig) {
+	PostService.$inject = ['$http', 'RedditResource', 'RedditConfig'];
+
+	function CommentService(RedditCommentResource, RedditConfig) {
 	    return {
 	      get: function (subreddit, id, limit) {
 	          return RedditCommentResource.get({ 
@@ -29,9 +36,11 @@ angular.module('reddit')
 		      }).$promise;
 	      }
 	    }
-	}])
+	}
 
-	.factory('URLService', ['RedditConfig', function(RedditConfig) {
+	CommentService.$inject = ['RedditCommentResource', 'RedditConfig'];
+
+	function URLService(RedditConfig) {
 		var getImgurUrl = function(url) {
 			if (url.match(/\.(jpeg|jpg|gif|png|gifv)$/) === null && url.match(/\/gallery\//) === null && url.match(/\/a\//) === null) {
 				url = url + '.jpg';
@@ -66,4 +75,8 @@ angular.module('reddit')
 			return handleEmptyImage(post);
 	      }
 	    }
-	}]);;
+	}
+
+	URLService.$inject = ['RedditConfig'];
+
+})();

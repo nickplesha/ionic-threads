@@ -1,11 +1,18 @@
-angular.module('reddit')
-.factory('Reddit', ['PostService', 'CommentService', 'URLService',
-    	function(PostService, CommentService, URLService) {
-            return {
-            	Posts: PostService,
-                Comments: CommentService,
-                URL: URLService
-            }
-        }
-    ]);
+(function() {
+	'use strict';
+
+	angular.module('reddit')
+		.factory('Reddit', Reddit);
+
+	function Reddit(PostService, CommentService, URLService) {
+	    return {
+	    	Posts: PostService,
+	        Comments: CommentService,
+	        URL: URLService
+	    }
+	}
+
+	Reddit.$inject = ['PostService', 'CommentService', 'URLService'];
+	
+})();
     

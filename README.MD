@@ -19,7 +19,7 @@ Include `ionic.threads.js` and `ionic.threads.css` after the rest of your Ionic 
 Add `ionic.contrib.ui.ionicThreads` as a module dependency of your app. Then use the following AngularJS directives:
 
 ```html
-<ion-thread comments="comments" post="post"></ion-thread>
+<ion-thread comments="comments"></ion-thread>
 ```
 
 ## Running the demo

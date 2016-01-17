@@ -1,5 +1,10 @@
-angular.module('reddit')
-	.factory('RedditConfig', function() {
+(function() {
+	'use strict';
+
+	angular.module('reddit')
+		.factory('RedditConfig', RedditConfig);
+
+	function RedditConfig() {
 		return {
 			defaultPageSize: 40,
 			upcomingPageSize: 500,
@@ -7,4 +12,6 @@ angular.module('reddit')
 			bufferSize: 4,
 			apiEndpoint: 'http://www.reddit.com'
 		}
-	});
+	};
+	
+})();
